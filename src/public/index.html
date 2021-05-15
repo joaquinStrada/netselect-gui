@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,10 @@
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/fonts/css/all.min.css">
     <link rel="stylesheet" href="./lib/fonts/roboto.css">
+    <link rel="stylesheet" href="./lib/highcharts/css/main.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
 
     <div class="container mt-4">
@@ -23,22 +26,61 @@
                 </div>
             </div>
             <div class="card-body p-4">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h3 class="card-header card-title text-center">Ping</h3>
+                            <div class="card-body p-4">
+                                <div class="chart-container" id="gauge-ping"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <h3 class="card-header card-title text-center">Velocidad de Carga</h3>
+                            <div class="card-body p-4">
+                                <div class="chart-container" id="gauge-speed-upload"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-14">
+                        <div class="card">
+                            <h3 class="card-header card-title text-center">Velocidad de Descarga</h3>
+                            <div class="card-body p-4">
+                                <div class="chart-container" id="gauge-speed-download"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <h1 class="card-header card-title text-center">Ping</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <h1 class="card-header card-title text-center">Velocidad de Descarga</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <h1 class="card-header card-title text-center">Velocidad de Carga</h1>
-                        </div>
-                    </div>
+                    <h3 class="d-block w-100 text-center mb-2">Servidores</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Localización</th>
+                                <th scope="col">País</th>
+                                <th scope="col">Ping</th>
+                                <th scope="col">Velocidad de Carga</th>
+                                <th scope="col">Velocidad de Descarga</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla">
+
+                        </tbody>
+                    </table>
+                    <template id="plantilla-tabla">
+                        <tr>
+                            <th scope="row">31687</th>
+                            <td>Colsecor Coop. Ltda</td>
+                            <td>Cordoba</td>
+                            <td>Argentina</td>
+                            <td>200ms</td>
+                            <td>30 mb/s</td>
+                            <td>40 mb/s</td>
+                        </tr>
+                    </template>
                 </div>
             </div>
         </div>
@@ -47,5 +89,13 @@
     <script src="./lib/bootstrap/js/jquery-3.6.0.min.js"></script>
     <script src="./lib/bootstrap/js/popper.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/highcharts/js/highcharts.js"></script>
+    <script src="./lib/highcharts/js/highcharts-more.js"></script>
+    <script src="./lib/highcharts/js/solid-gauge.js"></script>
+    <script src="./lib/highcharts/js/exporting.js"></script>
+    <script src="./lib/highcharts/js/export-data.js"></script>
+    <script src="./lib/highcharts/js/accessibility.js"></script>
+    <script src="./js/main.js" type="module"></script>
 </body>
+
 </html>
